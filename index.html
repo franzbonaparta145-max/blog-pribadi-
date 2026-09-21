@@ -152,6 +152,10 @@
             font-weight: bold;
         }
 
+        .btn-read:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -186,10 +190,15 @@
             <div class="card-body">
                 <span class="tag">Web Dev</span>
                 <h3 class="card-title">Pengalaman Bikin Website Pertama di TrebEdit</h3>
-                <p class="card-text">Ternyata belajar HTML dan CSS tidak sesusah yang dikira. Malahan seru anjay! 🔥</p>
+                <p class="card-text">
+                    Ternyata belajar HTML dan CSS tidak sesusah yang dikira. Malahan seru anjay! 🔥
+                </p>
+
                 <div class="card-footer">
                     <span>19 Sep 2026</span>
-                    <a href="#" class="btn-read">Baca Selengkapnya &rarr;</a>
+                    <a href="artikel1.html" target="_blank" class="btn-read">
+                        Baca Selengkapnya &rarr;
+                    </a>
                 </div>
             </div>
         </div>
@@ -201,9 +210,12 @@
                 <span class="tag">Proyek</span>
                 <h3 class="card-title">Bikin Game Flappy Bird Pake HTML Canvas</h3>
                 <p class="card-text">Eksperimen logika game dengan JavaScript. Mengatur gravitasi burung dan sensor tabrakan pipa secara interaktif ya walaupun gak perfect-perfect amat.</p>
+
                 <div class="card-footer">
                     <span>18 Sep 2026</span>
-                    <a href="#" class="btn-read">Baca Selengkapnya &rarr;</a>
+                    <a href="artikel2.html" target="_blank" class="btn-read">
+                        Baca Selengkapnya &rarr;
+                    </a>
                 </div>
             </div>
         </div>
@@ -214,10 +226,13 @@
             <div class="card-body">
                 <span class="tag">Tips</span>
                 <h3 class="card-title">Perlu Jago Matematika Gak Sih Buat Coding?</h3>
-                <p class="card-text">Membahas mitos bahwa koding butuh matematika rumit. Di era AI, logika dasar jauh lebih penting! Dan yang lebih penting lagi ialah SHOLAT! 😄👍</p>
+                <p class="card-text">Membahas mitos bahwa koding butuh matematika rumit. Di era AI, logika dasar jauh lebih penting! Dan yang lebih penting lagi ialah SHOLAT! 🤲🕌</p>
+
                 <div class="card-footer">
                     <span>15 Sep 2026</span>
-                    <a href="#" class="btn-read">Baca Selengkapnya &rarr;</a>
+                    <a href="artikel3.html" target="_blank" class="btn-read">
+                        Baca Selengkapnya &rarr;
+                    </a>
                 </div>
             </div>
         </div>
@@ -228,7 +243,7 @@
         <p>&copy; 2026 Blog Pribadi Saya. Dibuat di PPTQ Miftahul Khoirot.</p>
     </footer>
 
-    <!-- JAVASCRIPT FILTER -->
+    <!-- JAVASCRIPT FILTER KATEGORI -->
     <script>
         function filterPosts(category) {
             let buttons = document.querySelectorAll('.btn-filter');

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #050515;
+      overflow: hidden;
+    }
+
+    .solar-system {
+      font-size: 6px;
+      width: 100em;
+      height: 100em;
+      position: relative;
+    }
+
+    /* MATAHARI */
+    .sun {
+      position: absolute;
+      top: 42em;
+      left: 42em;
+      width: 16em;
+      height: 16em;
+      background-color: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 4em gold;
+    }
+
+    /* GARIS ORBIT & ANIMASI PUTAR */
+    .orbit {
+      position: absolute;
+      border: 0.1em solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      animation: orbit linear infinite;
+    }
+
+    /* PLANET (Titik bulat) */
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    /* 1. MERKURIUS */
+    .mercury-orbit {
+      top: 38em; left: 38em; width: 24em; height: 24em;
+      animation-duration: 3s;
+    }
+    .mercury { top: 2em; left: 2em; width: 1.5em; height: 1.5em; background-color: gray; }
+
+    /* 2. VENUS */
+    .venus-orbit {
+      top: 33em; left: 33em; width: 34em; height: 34em;
+      animation-duration: 5.5s;
+    }
+    .venus { top: 3em; left: 3em; width: 2.2em; height: 2.2em; background-color: #e3bb76; }
+
+    /* 3. BUMI */
+    .earth-orbit {
+      top: 27em; left: 27em; width: 46em; height: 46em;
+      animation-duration: 8s;
+    }
+    .earth { top: 4em; left: 4em; width: 2.5em; height: 2.5em; background-color: #2b82c5; }
+
+    /* 4. MARS */
+    .mars-orbit {
+      top: 21em; left: 21em; width: 58em; height: 58em;
+      animation-duration: 11s;
+    }
+    .mars { top: 5em; left: 5em; width: 2em; height: 2em; background-color: #c1440e; }
+
+    /* 5. JUPITER */
+    .jupiter-orbit {
+      top: 14em; left: 14em; width: 72em; height: 72em;
+      animation-duration: 18s;
+    }
+    .jupiter { top: 6em; left: 6em; width: 4.5em; height: 4.5em; background-color: #d8ca9d; }
+
+    /* 6. SATURNUS (+ Cincin) */
+    .saturn-orbit {
+      top: 7em; left: 7em; width: 86em; height: 86em;
+      animation-duration: 24s;
+    }
+    .saturn {
+      top: 7em; left: 7em; width: 3.8em; height: 3.8em;
+      background-color: #e2bf7d;
+      box-shadow: 0 0 0 0.8em rgba(226, 191, 125, 0.4);
+    }
+
+    /* 7. URANUS */
+    .uranus-orbit {
+      top: 1em; left: 1em; width: 98em; height: 98em;
+      animation-duration: 30s;
+    }
+    .uranus { top: 9em; left: 9em; width: 3em; height: 3em; background-color: #4b70dd; }
+
+    /* 8. NEPTUNUS */
+    .neptune-orbit {
+      top: -5em; left: -5em; width: 110em; height: 110em;
+      animation-duration: 38s;
+    }
+    .neptune { top: 11em; left: 11em; width: 2.8em; height: 2.8em; background-color: #274687; }
+
+    /* LOGIKA LOGIS ANIMASI MUTAR */
+    @keyframes orbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="solar-system">
+    <div class="sun"></div>
+
+    <div class="orbit mercury-orbit"><div class="planet mercury"></div></div>
+    <div class="orbit venus-orbit"><div class="planet venus"></div></div>
+    <div class="orbit earth-orbit"><div class="planet earth"></div></div>
+    <div class="orbit mars-orbit"><div class="planet mars"></div></div>
+    <div class="orbit jupiter-orbit"><div class="planet jupiter"></div></div>
+    <div class="orbit saturn-orbit"><div class="planet saturn"></div></div>
+    <div class="orbit uranus-orbit"><div class="planet uranus"></div></div>
+    <div class="orbit neptune-orbit"><div class="planet neptune"></div></div>
+  </div>
+
+</body>
+</html>

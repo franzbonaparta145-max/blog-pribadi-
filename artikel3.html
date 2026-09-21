@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, #0b1021 0%, #02040a 100%);
+      overflow: hidden;
+    }
+
+    /* WADAH UTAMA (UKURAN DIPERBESAR) */
+    .solar-system {
+      font-size: 10px; /* Diperbesar dari 6px jadi 10px */
+      width: 90em;
+      height: 90em;
+      position: relative;
+    }
+
+    /* MATAHARI DENGAN BANYAK LAPISAN CAHAYA (REALISTIS) */
+    .sun {
+      position: absolute;
+      top: 36em;
+      left: 36em;
+      width: 18em;
+      height: 18em;
+      background: radial-gradient(circle, #fff7ad 0%, #ffa500 50%, #ff4500 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 5em #ffaa00, 0 0 10em #ff4500;
+    }
+
+    /* GARIS ORBIT TIPIS */
+    .orbit {
+      position: absolute;
+      border: 0.1em solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      animation: orbit linear infinite;
+    }
+
+    /* DASAR STYLE PLANET & EFEK BAYANGAN 3D */
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      /* Bayangan gelap di sisi belakang planet */
+      box-shadow: inset -0.8em -0.8em 1.5em rgba(0, 0, 0, 0.85);
+    }
+
+    /* 1. MERKURIUS (Abu-abu Bertekstur) */
+    .mercury-orbit {
+      top: 32em; left: 32em; width: 26em; height: 26em;
+      animation-duration: 4s;
+    }
+    .mercury {
+      top: 2em; left: 2em; width: 2em; height: 2em;
+      background: radial-gradient(circle at 30% 30%, #b5b5b5, #5e5e5e);
+    }
+
+    /* 2. VENUS (Kuning Atmosfer Panas) */
+    .venus-orbit {
+      top: 26em; left: 26em; width: 38em; height: 38em;
+      animation-duration: 7s;
+    }
+    .venus {
+      top: 3em; left: 3em; width: 3.2em; height: 3.2em;
+      background: radial-gradient(circle at 30% 30%, #ffd885, #b8860b);
+    }
+
+    /* 3. BUMI (Lautan Biru + Daratan Hijau) */
+    .earth-orbit {
+      top: 19em; left: 19em; width: 52em; height: 52em;
+      animation-duration: 10s;
+    }
+    .earth {
+      top: 4em; left: 4em; width: 3.8em; height: 3.8em;
+      background: radial-gradient(circle at 30% 30%, #4da6ff 0%, #2e8b57 60%, #000080 100%);
+    }
+
+    /* 4. MARS (Merah Kawah) */
+    .mars-orbit {
+      top: 12em; left: 12em; width: 66em; height: 66em;
+      animation-duration: 14s;
+    }
+    .mars {
+      top: 5em; left: 5em; width: 2.8em; height: 2.8em;
+      background: radial-gradient(circle at 30% 30%, #ff7f50, #8b0000);
+    }
+
+    /* 5. JUPITER (Raksasa Gas Berlapis) */
+    .jupiter-orbit {
+      top: 4em; left: 4em; width: 82em; height: 82em;
+      animation-duration: 22s;
+    }
+    .jupiter {
+      top: 6em; left: 6em; width: 6.5em; height: 6.5em;
+      background: linear-gradient(180deg, #d3b38c 0%, #8b5a2b 30%, #e6ca65 50%, #8b5a2b 70%, #d3b38c 100%);
+    }
+
+    /* 6. SATURNUS (+ Cincin Realistis) */
+    .saturn-orbit {
+      top: -4em; left: -4em; width: 98em; height: 98em;
+      animation-duration: 30s;
+    }
+    .saturn {
+      top: 8em; left: 8em; width: 5.5em; height: 5.5em;
+      background: radial-gradient(circle at 30% 30%, #f4e2bb, #b89b5e);
+    }
+    /* CINCIN SATURNUS */
+    .saturn::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 10em; height: 3em;
+      border: 0.8em solid rgba(210, 180, 140, 0.6);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(-20deg);
+    }
+
+    /* 7. URANUS (Biru Es Muda) */
+    .uranus-orbit {
+      top: -12em; left: -12em; width: 114em; height: 114em;
+      animation-duration: 38s;
+    }
+    .uranus {
+      top: 11em; left: 11em; width: 4.5em; height: 4.5em;
+      background: radial-gradient(circle at 30% 30%, #afeeee, #4169e1);
+    }
+
+    /* 8. NEPTUNUS (Biru Gelap Dalam) */
+    .neptune-orbit {
+      top: -20em; left: -20em; width: 130em; height: 130em;
+      animation-duration: 46s;
+    }
+    .neptune {
+      top: 13em; left: 13em; width: 4.2em; height: 4.2em;
+      background: radial-gradient(circle at 30% 30%, #1e90ff, #00008b);
+    }
+
+    /* ANIMASI MUTAR ORBIT */
+    @keyframes orbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="solar-system">
+    <div class="sun"></div>
+
+    <div class="orbit mercury-orbit"><div class="planet mercury"></div></div>
+    <div class="orbit venus-orbit"><div class="planet venus"></div></div>
+    <div class="orbit earth-orbit"><div class="planet earth"></div></div>
+    <div class="orbit mars-orbit"><div class="planet mars"></div></div>
+    <div class="orbit jupiter-orbit"><div class="planet jupiter"></div></div>
+    <div class="orbit saturn-orbit"><div class="planet saturn"></div></div>
+    <div class="orbit uranus-orbit"><div class="planet uranus"></div></div>
+    <div class="orbit neptune-orbit"><div class="planet neptune"></div></div>
+  </div>
+
+</body>
+</html>
